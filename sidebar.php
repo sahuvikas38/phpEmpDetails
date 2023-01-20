@@ -26,23 +26,26 @@
     <hr class="sidebar-divider">
 
     <li class="nav-item">
-        <?php if ($_SESSION['user_role'] == 1) { ?>
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseone" aria-expanded="true" aria-controls="collapseFirst">
-                <i class="fas fa-solid fa-users"></i>
-                <span>Employees</span>
-            </a>
-            <div id="collapseone" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Employees :</h6>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseone" aria-expanded="true" aria-controls="collapseFirst">
+            <i class="fas fa-solid fa-users"></i>
+            <span>Employees</span>
+        </a>
+        <div id="collapseone" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Employee :</h6>
+                <?php if ($_SESSION['user_role'] == 1) { ?>
+                    <a class="collapse-item" href="edit.php">Profile</a>
                     <a class="collapse-item" href="all_employee.php">All Employees</a>
-                    <a class="collapse-item" href="register.php">Add Employees</a>
+                    <a class="collapse-item" href="#">Add Employees</a>
+                <?php } else{ ?>
+                    <a class="collapse-item" href="edit.php">Profile</a>
+                <?php }  ?>
                 </div>
 
             </div>
             <!-- Divider -->
             <hr class="sidebar-divider">
             <!-- Divider -->
-        <?php } ?>
 
         <?php if($_SESSION['is_freezed'] != 1) {?>
         <?php if ($_SESSION['user_role'] == 2) { ?>

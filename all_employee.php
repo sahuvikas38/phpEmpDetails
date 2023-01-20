@@ -1,6 +1,6 @@
 <?php session_start();
 
-if (!$_SESSION['user_role']) {
+if (!isset($_SESSION['user_role'])) {
     header("Location: login.php");
 } else {
 ?>

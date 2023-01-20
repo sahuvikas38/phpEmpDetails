@@ -6,22 +6,22 @@ session_start();
    
     $Ulog = $_POST['userEmail'];
     $Plog = $_POST['pswrd'];
-    
-    $loGin = "SELECT * FROM users WHERE emails ='" . mysqli_real_escape_string($connections, $Ulog) . "' AND Password ='" . mysqli_real_escape_string($connections, $Plog) . "' ";
+
+    $loGin = "SELECT * FROM users WHERE emails ='" . mysqli_real_escape_string($connections, $Ulog) . "' AND password ='" . mysqli_real_escape_string($connections, $Plog) . "' ";
     $loginFire = mysqli_query($connections, $loGin);
     $userData = mysqli_fetch_array($loginFire);
     $loginCheck = mysqli_num_rows($loginFire);
 
     if ($loginCheck){
-    
-    $_SESSION['id'] = $userData['id'];
-    $_SESSION['name'] = $userData['name'];
-    $_SESSION['emails'] = $userData['emails'];
-    $_SESSION['phone'] = $userData['phone'];
-    $_SESSION['user_role'] = $userData['user_role'];
-    $_SESSION['is_freezed'] = $userData['is_freezed'];
 
-    header("Location: index.php");
+        $_SESSION['id'] = $userData['id'];
+        $_SESSION['name'] = $userData['name'];
+        $_SESSION['emails'] = $userData['emails'];
+        $_SESSION['phone'] = $userData['phone'];
+        $_SESSION['user_role'] = $userData['user_role'];
+        $_SESSION['is_freezed'] = $userData['is_freezed'];
+
+        header("Location: index.php");
     }
 
  }
@@ -110,7 +110,7 @@ session_start();
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="jQueryValidation.js"></script>
+    <!-- <script src="jQueryValidation.js"></script> -->
     <script>
     function validateform() {
         countErr = 0;
