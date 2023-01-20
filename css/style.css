@@ -1,0 +1,16 @@
+.sidebar .logo-2{
+    display: none;
+  }
+  
+  .sidebar .logo-1{
+    display: block;
+  }
+  
+  
+  .sidebar.toggled .logo-2{
+    display: block;
+  }
+  
+  .sidebar.toggled .logo-1{
+    display: none;
+  }
